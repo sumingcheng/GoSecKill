@@ -20,3 +20,15 @@
 # Go workspace file
 go.work
 go.work.sum
+
+node_modules
+dist
+dist/*
+dist/**/*
+
+*.pb.go
+*.pb.gw.go
+/bin/*
+/log/*
+/tmp/*
+/.vscode/*
