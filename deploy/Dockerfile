@@ -5,6 +5,8 @@ WORKDIR /app
 # 复制整个项目代码
 COPY . .
 
+ENV GOPROXY=https://goproxy.cn,direct
+
 # 下载依赖并构建应用
 RUN go mod download
 RUN go build -o main .
