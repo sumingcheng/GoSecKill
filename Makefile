@@ -12,7 +12,7 @@ build:
 
 run:
 	@echo "正在运行 Docker 容器..."
-	docker run -d --name $(CONTAINER_NAME) $(IMAGE_NAME):$(TAG)
+	docker run -d -p 8080:8080 --name $(CONTAINER_NAME) $(IMAGE_NAME):$(TAG)
 
 stop:
 	@echo "正在停止 Docker 容器..."
