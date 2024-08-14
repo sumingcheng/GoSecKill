@@ -1,8 +1,8 @@
 apiVersion: metallb.io/v1beta1
 kind: IPAddressPool
 metadata:
-  name: large-ip-space
+  name: my-ip-pool
   namespace: metallb-system
 spec:
   addresses:
-    - 172.22.220.64-172.22.220.64  # 本机 IP
+    - 172.22.220.64-172.22.220.64
