@@ -7,7 +7,7 @@ build:
 	@echo "检查是否存同名 Docker 镜像并删除"
 	@docker rmi $(IMAGE_NAME):$(TAG) || true
 	@echo "正在构建 Docker 镜像..."
-	docker build -t $(IMAGE_NAME):$(TAG) -f /deploy/dockerfile . .
+	docker build -t $(IMAGE_NAME):$(TAG) -f ./deploy/dockerfile .
 
 run:
 	@echo "正在运行 Docker 容器..."
