@@ -10,7 +10,7 @@ func main() {
 	g := gin.Default()
 
 	g.GET("/", func(c *gin.Context) {
-		c.String(http.StatusOK, "Go Gin Server")
+		c.String(http.StatusOK, `Hello World~`)
 	})
 
 	err := g.Run(":8080")
