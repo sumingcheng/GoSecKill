@@ -1,6 +1,6 @@
 .PHONY: build run stop push clean
 
-IMAGE_NAME := go-sec-kill
+IMAGE_NAME := smcroot/go-sec-kill
 TAG := latest
 
 build:
