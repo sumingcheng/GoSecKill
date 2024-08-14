@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-sec-kill
+spec:
+  #  副本数量
+  replicas: 3
+  selector:
+    matchLabels:
+      app: go-sec-kill
+  #   描述你的 POD
+  template:
+    metadata:
+      labels:
+        app: go-sec-kill
+    #    POD 的具体信息
+    spec:
+      containers:
+        - name: go-sec-kill
+          image: go-sec-kill:latest
+          ports:
+            - containerPort: 8080
+

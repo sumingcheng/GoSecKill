@@ -1,29 +1,21 @@
 package main
 
 import (
-	"fmt"
-	"sync"
-	"time"
+	"github.com/gin-gonic/gin"
+	"log"
+	"net/http"
 )
 
-func counter(wg *sync.WaitGroup) {
-	defer wg.Done() // 通知WaitGroup该goroutine已完成
-	count := 0
-	for i := 0; i < 100; i++ {
-		count += i
-	}
-}
-
 func main() {
-	start := time.Now()
-	var wg sync.WaitGroup
-	// 创建100万个goroutine
-	for i := 0; i < 1000000; i++ {
-		wg.Add(1)
-		go counter(&wg)
-	}
+	g := gin.Default()
 
-	wg.Wait() // 等待所有goroutine完成
-	duration := time.Since(start)
-	fmt.Printf("所有goroutines完成 %s\n", duration)
+	g.GET("/", func(c *gin.Context) {
+		c.String(http.StatusOK, "Go Gin Server")
+	})
+
+	err := g.Run(":8080")
+
+	if err != nil {
+		log.Fatal("Error starting server")
+	}
 }
