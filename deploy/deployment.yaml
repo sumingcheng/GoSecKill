@@ -20,4 +20,5 @@ spec:
           image: smcroot/go-sec-kill
           ports:
             - containerPort: 8080
+          imagePullPolicy: IfNotPresent
 
